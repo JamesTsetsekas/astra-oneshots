@@ -1,0 +1,20 @@
+{
+  "reportId": "skybreak-1567378062-8909",
+  "seed": 1567378062,
+  "finishedAt": "2026-09-29T01:33:05.728Z",
+  "simulationTicks": 8909,
+  "simulationHz": 30,
+  "mode": "solo",
+  "playerPlace": 14,
+  "playerSurvivalSeconds": 54.4,
+  "playerKills": 0,
+  "winner": "Ari Breaker",
+  "lastElimination": "Ari Breaker eliminated Mira Sails",
+  "inputPath": "Production UI plus normal keyboard events; no gameplay state mutation",
+  "observedRuntimeErrors": [],
+  "productionInspectorAbsent": true,
+  "finalFreshBrowserErrors": [],
+  "finalTests": { "passed": 17, "files": 3 },
+  "resultScreenshot": "skybreak-results.png",
+  "finalGameplayScreenshot": "skybreak-gameplay.png"
+}

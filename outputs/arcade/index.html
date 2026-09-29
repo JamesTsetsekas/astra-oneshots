@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#171c20" />
+    <title>Astra — Game Collection</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/" aria-label="Astra game collection"
+        >A<span>STRA</span><i>PLAY LAB / 08</i></a
+      >
+      <div class="local">
+        <span></span> LOCAL COLLECTION<small
+          >ORIGINAL WORLDS. MADE TO PLAY.</small
+        >
+      </div>
+    </header>
+    <main>
+      <div class="intro">
+        <div>
+          <p class="eyebrow">THE ASTRA BUILDS / VOLUME ONE</p>
+          <h1>Eight worlds.<br /><em>Your next move.</em></h1>
+        </div>
+        <div class="intro-note">
+          <p>
+            Strategy, action, and the open road.<br />Pick a world and make it
+            yours.
+          </p>
+          <span>DESKTOP BROWSER · KEYBOARD & MOUSE</span>
+        </div>
+      </div>
+      <div class="collection-bar">
+        <span>THE COLLECTION</span
+        ><span
+          ><span id="count">CHECKING LOCAL BUILDS</span
+          ><button
+            id="refresh"
+            type="button"
+            aria-label="Refresh local game status"
+          >
+            ↻
+          </button></span
+        >
+      </div>
+      <div id="games" class="games" aria-live="polite"></div>
+      <section class="footnote">
+        <div>
+          <b>YOUR GAMES. YOUR DEVICE.</b>
+          <p>
+            Each game opens in its own tab and keeps its saves on this computer.
+            No account is required for local play. Game controls and scope notes
+            are included in each build.
+          </p>
+        </div>
+        <div>
+          <b>START HERE NEXT TIME</b>
+          <p>
+            Run <code>node outputs/arcade/serve.mjs</code> from the workspace,
+            then open this page. Keep that terminal running while you play.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>ASTRA / ORIGINAL GAME COLLECTION</span
+      ><span>LOCAL HOST ONLY — NOT PUBLISHED ONLINE</span>
+    </footer>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

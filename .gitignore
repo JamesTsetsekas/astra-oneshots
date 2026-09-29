@@ -1,0 +1,26 @@
+# Installed dependencies and generated builds
+node_modules/
+dist/
+.vite/
+coverage/
+*.tsbuildinfo
+*.log
+
+# Credentials, local environment, and editor/OS state
+.env
+.env.*
+!.env.example
+!.env.sample
+.npmrc
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local scratch and redundant exported prompt archive
+/work/
+/outputs/browser-game-implementation-prompt-pack.zip
+playwright-report/
+test-results/

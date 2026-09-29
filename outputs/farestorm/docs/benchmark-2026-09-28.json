@@ -1,0 +1,237 @@
+{
+  "scope": "Node headless fixed-step physics and traffic, not a browser GPU/FPS benchmark",
+  "world": {
+    "buildings": 214,
+    "destinations": 32,
+    "shortcuts": 18
+  },
+  "simulationSteps": 18145,
+  "wallSeconds": 8.86,
+  "simulationMs": {
+    "mean": 0.445,
+    "p50": 0.321,
+    "p95": 1.096,
+    "p99": 2.519
+  },
+  "traffic": 55,
+  "invalidTransforms": 0,
+  "belowTerrain": 0,
+  "result": {
+    "id": "6172026-quick-1790631640127",
+    "mode": "quick",
+    "taxi": "breaker",
+    "seed": 6172026,
+    "score": 12487,
+    "fares": 7903,
+    "tips": 4584,
+    "deliveries": 4,
+    "bestChain": 6,
+    "collisions": 4,
+    "shortcuts": [],
+    "duration": 300.0000000000558,
+    "rank": "A",
+    "efficiency": 0.5570048114961005,
+    "assist": true,
+    "trial": 0,
+    "date": 1790631640127
+  },
+  "replayFrames": 18000,
+  "ghostSamples": 3000,
+  "tuning": [
+    {
+      "taxi": "gull",
+      "zeroTo100Seconds": 4.87,
+      "observed14SecondSpeed": 158,
+      "samples": [
+        {
+          "second": 0,
+          "kmh": 0.4
+        },
+        {
+          "second": 1,
+          "kmh": 22.9
+        },
+        {
+          "second": 2,
+          "kmh": 44.4
+        },
+        {
+          "second": 3,
+          "kmh": 65
+        },
+        {
+          "second": 4,
+          "kmh": 84.4
+        },
+        {
+          "second": 5,
+          "kmh": 102.8
+        },
+        {
+          "second": 6,
+          "kmh": 120
+        },
+        {
+          "second": 7,
+          "kmh": 136
+        },
+        {
+          "second": 8,
+          "kmh": 150.9
+        },
+        {
+          "second": 9,
+          "kmh": 157.9
+        },
+        {
+          "second": 10,
+          "kmh": 157.9
+        },
+        {
+          "second": 11,
+          "kmh": 157.9
+        },
+        {
+          "second": 12,
+          "kmh": 157.9
+        },
+        {
+          "second": 13,
+          "kmh": 157.9
+        }
+      ]
+    },
+    {
+      "taxi": "breaker",
+      "zeroTo100Seconds": 5.1,
+      "observed14SecondSpeed": 172,
+      "samples": [
+        {
+          "second": 0,
+          "kmh": 0.4
+        },
+        {
+          "second": 1,
+          "kmh": 22
+        },
+        {
+          "second": 2,
+          "kmh": 42.7
+        },
+        {
+          "second": 3,
+          "kmh": 62.5
+        },
+        {
+          "second": 4,
+          "kmh": 81.2
+        },
+        {
+          "second": 5,
+          "kmh": 98.9
+        },
+        {
+          "second": 6,
+          "kmh": 115.4
+        },
+        {
+          "second": 7,
+          "kmh": 130.9
+        },
+        {
+          "second": 8,
+          "kmh": 145.3
+        },
+        {
+          "second": 9,
+          "kmh": 158.7
+        },
+        {
+          "second": 10,
+          "kmh": 171
+        },
+        {
+          "second": 11,
+          "kmh": 171.9
+        },
+        {
+          "second": 12,
+          "kmh": 171.9
+        },
+        {
+          "second": 13,
+          "kmh": 171.9
+        }
+      ]
+    },
+    {
+      "taxi": "tempest",
+      "zeroTo100Seconds": 5.7,
+      "observed14SecondSpeed": 180,
+      "samples": [
+        {
+          "second": 0,
+          "kmh": 0.3
+        },
+        {
+          "second": 1,
+          "kmh": 19.9
+        },
+        {
+          "second": 2,
+          "kmh": 38.7
+        },
+        {
+          "second": 3,
+          "kmh": 56.6
+        },
+        {
+          "second": 4,
+          "kmh": 73.6
+        },
+        {
+          "second": 5,
+          "kmh": 89.7
+        },
+        {
+          "second": 6,
+          "kmh": 104.8
+        },
+        {
+          "second": 7,
+          "kmh": 119
+        },
+        {
+          "second": 8,
+          "kmh": 132.2
+        },
+        {
+          "second": 9,
+          "kmh": 144.5
+        },
+        {
+          "second": 10,
+          "kmh": 155.9
+        },
+        {
+          "second": 11,
+          "kmh": 166.4
+        },
+        {
+          "second": 12,
+          "kmh": 176.1
+        },
+        {
+          "second": 13,
+          "kmh": 179.9
+        }
+      ]
+    }
+  ],
+  "measurementContext": {
+    "date": "2026-09-28",
+    "os": "Windows",
+    "node": "22.12.0",
+    "note": "Recorded during concurrent development and browser verification. CPU timing includes machine contention and is not a GPU/frame-rate measurement."
+  }
+}

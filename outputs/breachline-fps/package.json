@@ -1,0 +1,33 @@
+{
+  "name": "breachline-fps",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4176",
+    "server": "tsx server/index.ts",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "benchmark": "tsx tools/benchmark.ts",
+    "test:relay": "tsx tools/relay-check.ts"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "three": "^0.180.0",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.6",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@types/three": "^0.180.0",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "^5.0.4",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4"
+  }
+}

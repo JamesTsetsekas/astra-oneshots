@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "options": {
+    "hero": "suri",
+    "mode": "skirmish",
+    "seed": 3928030693,
+    "talents": [
+      "Blink",
+      "Mend"
+    ]
+  },
+  "commands": [
+    {
+      "tick": 444,
+      "type": "rank",
+      "value": 0
+    },
+    {
+      "tick": 451,
+      "type": "cast",
+      "value": {
+        "slot": 0,
+        "point": {
+          "x": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "tick": 457,
+      "type": "ward",
+      "value": {
+        "x": -61,
+        "z": -2
+      }
+    },
+    {
+      "tick": 464,
+      "type": "buy",
+      "value": 0
+    },
+    {
+      "tick": 477,
+      "type": "move",
+      "value": {
+        "x": -53.70201836480595,
+        "z": -14.156917813613031
+      }
+    },
+    {
+      "tick": 492,
+      "type": "auto"
+    },
+    {
+      "tick": 977,
+      "type": "speed",
+      "value": 2
+    },
+    {
+      "tick": 1007,
+      "type": "speed",
+      "value": 4
+    }
+  ],
+  "result": {
+    "id": "crown-3928030693-8903",
+    "winner": 0,
+    "duration": 296.7666666666871,
+    "hero": "suri",
+    "seed": 3928030693,
+    "mode": "skirmish",
+    "scoreboard": [
+      {
+        "name": "Suri Vale",
+        "hero": "suri",
+        "team": 0,
+        "kills": 3,
+        "deaths": 6,
+        "assists": 3,
+        "gold": 1459,
+        "damage": 16131,
+        "structures": 0,
+        "lastHits": 32,
+        "items": [
+          0,
+          28,
+          16
+        ],
+        "level": 7
+      },
+      {
+        "name": "Brannoch",
+        "hero": "brannoch",
+        "team": 0,
+        "kills": 4,
+        "deaths": 5,
+        "assists": 5,
+        "gold": 1042,
+        "damage": 4917,
+        "structures": 0,
+        "lastHits": 3,
+        "items": [
+          2,
+          1,
+          28,
+          17
+        ],
+        "level": 6
+      },
+      {
+        "name": "Oru",
+        "hero": "oru",
+        "team": 0,
+        "kills": 5,
+        "deaths": 3,
+        "assists": 4,
+        "gold": 1069,
+        "damage": 25471,
+        "structures": 3,
+        "lastHits": 45,
+        "items": [
+          0,
+          3,
+          28,
+          20,
+          19
+        ],
+        "level": 12
+      },
+      {
+        "name": "Kesh",
+        "hero": "kesh",
+        "team": 1,
+        "kills": 2,
+        "deaths": 6,
+        "assists": 4,
+        "gold": 1110,
+        "damage": 9153,
+        "structures": 1,
+        "lastHits": 13,
+        "items": [
+          1,
+          4,
+          29
+        ],
+        "level": 7
+      },
+      {
+        "name": "Ilyra Quill",
+        "hero": "ilyra",
+        "team": 1,
+        "kills": 8,
+        "deaths": 5,
+        "assists": 3,
+        "gold": 928,
+        "damage": 29291,
+        "structures": 0,
+        "lastHits": 51,
+        "items": [
+          2,
+          28,
+          18,
+          23
+        ],
+        "level": 10
+      },
+      {
+        "name": "Vey",
+        "hero": "vey",
+        "team": 1,
+        "kills": 1,
+        "deaths": 9,
+        "assists": 1,
+        "gold": 1103,
+        "damage": 6829,
+        "structures": 0,
+        "lastHits": 13,
+        "items": [
+          0,
+          28
+        ],
+        "level": 6
+      }
+    ],
+    "events": [
+      {
+        "id": 2181,
+        "time": 289.4000000000146,
+        "kind": "kill",
+        "text": "Oru defeated Vey",
+        "team": 0,
+        "x": 64,
+        "z": 0
+      },
+      {
+        "id": 2221,
+        "time": 292.60000000001713,
+        "kind": "kill",
+        "text": "bolt defeated Ilyra Quill",
+        "team": 0,
+        "x": 64,
+        "z": 0
+      },
+      {
+        "id": 2270,
+        "time": 296.40000000002016,
+        "kind": "kill",
+        "text": "Core Tower defeated Kesh",
+        "team": 0,
+        "x": -57.143633499757755,
+        "z": -5.978380701073945
+      },
+      {
+        "id": 2274,
+        "time": 296.7666666666871,
+        "kind": "structure",
+        "text": "Crown Engine has fallen",
+        "team": 0,
+        "x": 66,
+        "z": 0
+      },
+      {
+        "id": 2275,
+        "time": 296.7666666666871,
+        "kind": "victory",
+        "text": "Dawnwright claimed the Crown Engine",
+        "team": 0,
+        "x": 0,
+        "z": 0
+      }
+    ]
+  }
+}
