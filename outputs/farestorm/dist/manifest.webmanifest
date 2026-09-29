@@ -1,0 +1,14 @@
+{
+  "id": "/",
+  "name": "Farestorm - Galeport Shift",
+  "short_name": "Farestorm",
+  "description": "Catch a fare. Chase the coast. An original arcade taxi driving game.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#143e49",
+  "theme_color": "#143e49",
+  "categories": ["games", "entertainment"],
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

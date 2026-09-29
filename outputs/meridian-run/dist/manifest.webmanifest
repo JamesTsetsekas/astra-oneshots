@@ -1,0 +1,21 @@
+{
+  "id": "/",
+  "name": "Meridian Run — A South Quay Story",
+  "short_name": "Meridian Run",
+  "description": "An original local single-player open-world courier adventure.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#182b31",
+  "theme_color": "#182b31",
+  "categories": ["games"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
