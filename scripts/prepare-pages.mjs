@@ -9,6 +9,7 @@ const games = JSON.parse(fs.readFileSync(path.join(arcade, "games.json"), "utf8"
 fs.rmSync(site, { recursive: true, force: true });
 fs.mkdirSync(site, { recursive: true });
 fs.mkdirSync(path.join(site, "screenshots"), { recursive: true });
+fs.mkdirSync(path.join(site, "prompts"), { recursive: true });
 for (const file of ["index.html", "style.css", "app.js", "games.json"]) {
   fs.copyFileSync(path.join(arcade, file), path.join(site, file));
 }
@@ -18,6 +19,10 @@ const replaceRootAssets = (text) => text
   .replaceAll('"/manifest.webmanifest', '"./manifest.webmanifest')
   .replaceAll('"/icon.svg', '"./icon.svg');
 for (const game of games) {
+  fs.copyFileSync(
+    path.join(root, "outputs", game.prompt),
+    path.join(site, "prompts", game.prompt),
+  );
   const source = path.join(root, "outputs", game.folder, "dist");
   const target = path.join(site, "games", game.id);
   fs.cpSync(source, target, { recursive: true });

@@ -13,7 +13,7 @@
         >A<span>STRA</span><i>PLAY LAB / 08</i></a
       >
       <div class="local">
-        <span></span> LOCAL COLLECTION<small
+        <span></span> GAME COLLECTION<small
           >ORIGINAL WORLDS. MADE TO PLAY.</small
         >
       </div>
@@ -35,38 +35,54 @@
       <div class="collection-bar">
         <span>THE COLLECTION</span
         ><span
-          ><span id="count">CHECKING LOCAL BUILDS</span
+          ><span id="count">CHECKING GAMES</span
           ><button
             id="refresh"
             type="button"
-            aria-label="Refresh local game status"
+            aria-label="Refresh game status"
           >
             ↻
           </button></span
         >
       </div>
       <div id="games" class="games" aria-live="polite"></div>
+      <dialog id="prompt-dialog" class="prompt-dialog" aria-labelledby="prompt-title">
+        <div class="prompt-header">
+          <div>
+            <p class="prompt-eyebrow">THE ORIGINAL IMPLEMENTATION PROMPT</p>
+            <h2 id="prompt-title"></h2>
+          </div>
+          <button id="prompt-close" class="prompt-close" type="button" aria-label="Close prompt">×</button>
+        </div>
+        <p class="prompt-intro">This is the original game brief. The playable build is a focused vertical slice of that larger vision.</p>
+        <div class="prompt-body"><pre id="prompt-content">Loading prompt…</pre></div>
+        <div class="prompt-footer">
+          <a id="prompt-raw" href="#" target="_blank" rel="noopener">OPEN MARKDOWN ↗</a>
+          <button id="prompt-done" type="button">CLOSE</button>
+        </div>
+      </dialog>
       <section class="footnote">
         <div>
           <b>YOUR GAMES. YOUR DEVICE.</b>
           <p>
             Each game opens in its own tab and keeps its saves on this computer.
-            No account is required for local play. Game controls and scope notes
+            No account is required. Game controls and scope notes
             are included in each build.
           </p>
         </div>
         <div>
-          <b>START HERE NEXT TIME</b>
+          <b>EXPLORE THE BUILDS</b>
           <p>
-            Run <code>node outputs/arcade/serve.mjs</code> from the workspace,
-            then open this page. Keep that terminal running while you play.
+            Play each game above, or open its original implementation prompt to
+            see the design brief behind it. The source code is on
+            <a href="https://github.com/JamesTsetsekas/astra-oneshots" target="_blank" rel="noopener">GitHub</a>.
           </p>
         </div>
       </section>
     </main>
     <footer>
       <span>ASTRA / ORIGINAL GAME COLLECTION</span
-      ><span>LOCAL HOST ONLY — NOT PUBLISHED ONLINE</span>
+      ><span>PLAY IN YOUR BROWSER · SAVES STAY ON THIS DEVICE</span>
     </footer>
     <script type="module" src="./app.js"></script>
   </body>

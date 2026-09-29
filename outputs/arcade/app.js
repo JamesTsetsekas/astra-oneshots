@@ -9,6 +9,38 @@ const glyphs = {
   farestorm: "〰",
 };
 let refreshTimer;
+let promptRequest;
+const promptDialog = document.getElementById("prompt-dialog");
+const promptContent = document.getElementById("prompt-content");
+
+async function showPrompt(game) {
+  promptRequest?.abort();
+  promptRequest = new AbortController();
+  const url = `./prompts/${encodeURIComponent(game.prompt)}`;
+  document.getElementById("prompt-title").textContent = game.name;
+  document.getElementById("prompt-raw").href = url;
+  promptContent.textContent = "Loading prompt…";
+  promptDialog.showModal();
+  try {
+    const response = await fetch(url, { signal: promptRequest.signal });
+    if (!response.ok) throw new Error("Prompt unavailable");
+    promptContent.textContent = await response.text();
+    document.querySelector(".prompt-body").scrollTop = 0;
+  } catch (error) {
+    if (error.name !== "AbortError")
+      promptContent.textContent = "The prompt could not be loaded. Try OPEN MARKDOWN below.";
+  }
+}
+
+function closePrompt() {
+  promptRequest?.abort();
+  promptDialog.close();
+}
+
+document.getElementById("prompt-close").addEventListener("click", closePrompt);
+document.getElementById("prompt-done").addEventListener("click", closePrompt);
+promptDialog.addEventListener("close", () => promptRequest?.abort());
+
 async function render(attempt = 0) {
   clearTimeout(refreshTimer);
   try {
@@ -76,7 +108,16 @@ async function render(attempt = 0) {
         link.append(arrow);
         if (!ready)
           link.addEventListener("click", (e) => e.preventDefault());
-        details.append(genre, title, description, link);
+        const prompt = document.createElement("button");
+        prompt.className = "prompt-link";
+        prompt.type = "button";
+        prompt.setAttribute("aria-haspopup", "dialog");
+        prompt.textContent = "SEE THE PROMPT";
+        const promptArrow = document.createElement("span");
+        promptArrow.textContent = "↗";
+        prompt.append(promptArrow);
+        prompt.addEventListener("click", () => showPrompt(g));
+        details.append(genre, title, description, link, prompt);
         card.append(image, details);
         return card;
       }),

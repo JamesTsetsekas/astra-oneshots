@@ -15,6 +15,7 @@ export const games = [
     tag: "REMADE",
     description: "Build an outpost. Command the mineral frontier.",
     image: "astra-production.png",
+    prompt: "01-shardfront-browser-rts-prompt.md",
   },
   {
     id: "ashfall",
@@ -26,6 +27,7 @@ export const games = [
     description:
       "Two heroes. One ruined covenant. Earn your way through the ash.",
     image: "astra-final-world.png",
+    prompt: "02-ashfall-covenant-browser-arpg-prompt.md",
   },
   {
     id: "breachline",
@@ -37,6 +39,7 @@ export const games = [
     description:
       "Fast movement, readable gunfights, and a match worth finishing.",
     image: "combat-verified.png",
+    prompt: "03-breachline-browser-arcade-fps-prompt.md",
   },
   {
     id: "protocol",
@@ -47,6 +50,7 @@ export const games = [
     tag: "NEW",
     description: "Buy with purpose. Hold an angle. Every round counts.",
     image: "gameplay-verified.png",
+    prompt: "04-last-protocol-browser-tactical-fps-prompt.md",
   },
   {
     id: "crownfall",
@@ -57,6 +61,7 @@ export const games = [
     tag: "NEW",
     description: "Choose a hero. Break the defenses. Take the Crown.",
     image: "astra-gameplay.png",
+    prompt: "05-crownfall-browser-moba-prompt.md",
   },
   {
     id: "skybreak",
@@ -67,6 +72,7 @@ export const games = [
     tag: "NEW",
     description: "Drop in, gear up, and outlast the closing sky.",
     image: "skybreak-gameplay.png",
+    prompt: "06-skybreak-browser-battle-royale-prompt.md",
   },
   {
     id: "meridian",
@@ -77,6 +83,7 @@ export const games = [
     tag: "NEW",
     description: "One courier. A stolen contract. A city that remembers.",
     image: "meridian-final-gameplay.png",
+    prompt: "07-meridian-run-browser-open-world-prompt.md",
   },
   {
     id: "farestorm",
@@ -87,6 +94,7 @@ export const games = [
     tag: "APPROVED BUILD",
     description: "Catch a fare. Chase the coast. Make every second pay.",
     image: "docs/final-gameplay.png",
+    prompt: "08-farestorm-browser-arcade-driving-prompt.md",
   },
 ];
 const mime = {
@@ -105,6 +113,7 @@ const mime = {
   ".woff": "font/woff",
   ".mp3": "audio/mpeg",
   ".ogg": "audio/ogg",
+  ".md": "text/markdown; charset=utf-8",
 };
 function file(res, filename) {
   if (!fs.existsSync(filename) || !fs.statSync(filename).isFile()) {
@@ -276,6 +285,16 @@ const launcher = http.createServer(async (req, res) => {
     else {
       res.writeHead(404);
       res.end();
+    }
+    return;
+  }
+  if (url.pathname.startsWith("/prompts/")) {
+    const prompt = url.pathname.slice("/prompts/".length);
+    if (games.some((game) => game.prompt === prompt))
+      file(res, path.join(output, prompt));
+    else {
+      res.writeHead(404);
+      res.end("Prompt not found");
     }
     return;
   }
