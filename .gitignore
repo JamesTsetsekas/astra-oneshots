@@ -22,5 +22,6 @@ Thumbs.db
 # Local scratch and redundant exported prompt archive
 /work/
 /outputs/browser-game-implementation-prompt-pack.zip
+site/
 playwright-report/
 test-results/

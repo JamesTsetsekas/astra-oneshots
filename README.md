@@ -19,6 +19,8 @@ npm start
 
 Open **http://127.0.0.1:4160** and keep the terminal running. A WebGL 2 desktop browser and keyboard/mouse are the verified target. The private repository requires GitHub authentication to clone.
 
+The public GitHub Pages build is available at **https://jamestsetsekas.github.io/astra-oneshots/** after the Pages workflow completes. Pages is a static showcase: each game is built into a relative subdirectory, while the optional Breachline relay remains local-only.
+
 `setup` installs each game's exact lockfile with `npm ci`, then builds its production bundle. Initial setup downloads dependencies and compiles all eight projects; allow several minutes. The launcher serves those generated builds locally. It does not rebuild automatically. Dependencies and `dist` folders are intentionally excluded from Git.
 
 ## Games

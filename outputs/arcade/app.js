@@ -12,12 +12,17 @@ let refreshTimer;
 async function render(attempt = 0) {
   clearTimeout(refreshTimer);
   try {
-    const games = await fetch("/api/games", { cache: "no-store" }).then((r) => {
+    const local = await fetch("/api/games", { cache: "no-store" }).then((r) => {
       if (!r.ok) throw new Error("Local status unavailable");
       return r.json();
+    }).catch(() => null);
+    const games = local ?? await fetch("./games.json", { cache: "no-store" }).then((r) => {
+      if (!r.ok) throw new Error("Static game manifest unavailable");
+      return r.json();
     });
+    const staticMode = !local;
     document.getElementById("count").textContent =
-      `${games.filter((g) => g.running).length} / ${games.length} READY TO PLAY`;
+      `${games.filter((g) => staticMode || g.running).length} / ${games.length} READY TO PLAY`;
     document.getElementById("games").replaceChildren(
       ...games.map((g, i) => {
         const card = document.createElement("article");
@@ -26,7 +31,7 @@ async function render(attempt = 0) {
         image.className = "preview";
         if (g.screenshot) {
           const img = document.createElement("img");
-          img.src = `/screenshots/${g.id}`;
+          img.src = staticMode ? `./screenshots/${g.id}.png` : `/screenshots/${g.id}`;
           img.alt = `${g.name} actual gameplay`;
           img.loading = "lazy";
           image.append(img);
@@ -55,20 +60,21 @@ async function render(attempt = 0) {
         description.className = "description";
         description.textContent = g.description;
         const link = document.createElement("a");
-        link.href = `http://127.0.0.1:${g.port}/`;
+        link.href = staticMode ? `./games/${g.id}/` : `http://127.0.0.1:${g.port}/`;
         link.target = "_blank";
         link.rel = "noopener";
         if (g.id === "breachline")
           link.title = g.relayReady
             ? "Local bot game and optional local WebSocket relay are available."
             : "Local bot game. Optional local relay is not confirmed on this server.";
-        link.className = g.running ? "play" : "play disabled";
-        link.setAttribute("aria-disabled", String(!g.running));
-        link.textContent = g.running ? "PLAY GAME" : "BUILD NOT RUNNING";
+        const ready = staticMode || g.running;
+        link.className = ready ? "play" : "play disabled";
+        link.setAttribute("aria-disabled", String(!ready));
+        link.textContent = ready ? "PLAY GAME" : "BUILD NOT RUNNING";
         const arrow = document.createElement("span");
         arrow.textContent = "↗";
         link.append(arrow);
-        if (!g.running)
+        if (!ready)
           link.addEventListener("click", (e) => e.preventDefault());
         details.append(genre, title, description, link);
         card.append(image, details);
@@ -77,7 +83,7 @@ async function render(attempt = 0) {
     );
     if (
       games.some(
-        (g) => !g.running || (g.id === "breachline" && !g.relayReady),
+        (g) => !staticMode && (!g.running || (g.id === "breachline" && !g.relayReady)),
       ) &&
       attempt < 8
     )
